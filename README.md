@@ -18,12 +18,12 @@
      (5) todo列表根据时间节点排序，日期近的靠前
      
      (6) 顶部点击  
-        clear done： 只显示未完成的项目
-        showAll： 显示所有
+        **clear done：** 只显示未完成的项目
+        **showAll：** 显示所有
     
      (7) 底部点击  
-        clear completed： 可删除所有已完成todo
-        all completed： 将所有todo状态设置为已完成
+        **clear completed：** 可删除所有已完成todo
+        **all completed：** 将所有todo状态设置为已完成
      
      (8) 待办todos数量显示
      
