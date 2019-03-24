@@ -4,13 +4,6 @@
       <el-form-item label="todo名称">
         <el-input v-model="todoDetail.todo" class="w-300"></el-input>
       </el-form-item>
-      <!-- <el-form-item label="优先级">
-        <el-radio-group v-model="todoDetail.priority" >
-          <el-radio label="1" style="color: #333">特别急</el-radio>
-          <el-radio label="2" style="color: #333">有点急</el-radio>
-          <el-radio label="3" style="color: #333">不着急</el-radio>
-        </el-radio-group>
-      </el-form-item> -->
       <el-form-item label="截止时间">
         <el-date-picker
           v-model="todoDetail.deadline"
@@ -41,7 +34,6 @@ export default {
   methods: {
     showUpdateTodo (item) {
       this.updateTodoFlag = true
-      console.log(item)
       this.todoDetail = item
     },
     submitUpdate () {

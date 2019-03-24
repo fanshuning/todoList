@@ -6,7 +6,6 @@ process.env.NODE_ENV === 'development'
 
 // 获取所有todo
 export function getAllTodos () {
-  console.log(process.env.NODE_ENV)
   return axios.get(`${baseUrl}/api/getAllTodos`)
 }
 

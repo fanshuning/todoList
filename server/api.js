@@ -43,8 +43,6 @@ router.get('/api/getAllTodos', (req, res) => {
 
 // 删除todo
 router.post('/api/delateTodo', (req, res) => {
-  console.log('delate')
-  console.log(req.body)
   todoModel.count({"id": req.body.id},(err,docs) => {
     todoModel.remove({"id": req.body.id },(err) => {
           if (err) return handleError(err);
@@ -56,7 +54,6 @@ router.post('/api/delateTodo', (req, res) => {
 
 // 修改todo
 router.post('/api/updateTodo', (req, res) => {
-  console.log('node update')
   todoModel.count({"id": req.body.id }, (err,docs) => {
     todoModel.update({"id": req.body.id }, req.body, (err) => {
           if (err) return handleError(err);

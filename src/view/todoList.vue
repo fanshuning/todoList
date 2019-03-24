@@ -26,7 +26,7 @@
               :class="[item.isEnd? 'through-line' : '', 'cursor-pointer', 'todo-content']"
               @click="showUpdateTodo(item)"
             >{{item.todo}}</div>
-            <i class="el-icon-delete delete cursor-pointer" @click="delateTodo(item)"></i>
+            <i class="el-icon-delete delete" @click="delateTodo(item)"></i>
             <span style="float: right">{{item.showTime}}</span>
         </el-row>
       </div>
@@ -49,8 +49,6 @@ export default {
   data () {
     return {
       todoContent: '',
-      priority: '3',
-      status: 'begining',
       deadline: Date.parse(new Date()),
       todoList: [],
       showAll: true,
@@ -160,6 +158,7 @@ export default {
       })
     },
 
+    // 将所有todo标记为已完成
     allCompleted () {
       this.todoList.forEach(item => {
         if (item.isEnd === false) {
@@ -176,6 +175,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
+// 顶部新增todo样式
 .add-todo {
   width: 100%;
   height: 100px;
@@ -199,12 +199,31 @@ export default {
   }
 }
 
+// todo卡片样式
 .todo-card {
   width: 800px;
   margin: 50px auto;
   min-height: 600px;
   border-radius: 10px;
   position: relative;
+  .list {
+    margin: 20px;
+    font-size: 20px;
+    .through-line {
+      text-decoration: line-through;
+    }
+    .delete {
+      float: right;
+      margin: 0 10px;
+    }
+    .todo-content {
+      max-width: 500px;
+      overflow: hidden;
+      display: inline-block;
+      text-overflow: ellipsis;
+      margin-left: 10px;
+    }
+  }
   .lastNum {
     position: absolute;
     bottom: 10px;
@@ -217,35 +236,16 @@ export default {
     bottom: 10px;
     right: 20px;
   }
-  .todo-content {
-    max-width: 500px;
-    overflow: hidden;
-    display: inline-block;
-    text-overflow: ellipsis;
-  }
-}
-.todo-card /deep/ .el-dialog {
-  width: 800px;
-}
-.todo-card /deep/ i {
-  line-height: 30px;
-  font-size: 20px;
-}
-.list {
-  margin: 20px;
-  font-size: 20px;
-  .through-line {
-    text-decoration: line-through;
-  }
-  .delete {
-    float: right;
-    margin: 0 10px;
-  }
 }
 .cursor-pointer {
   cursor: pointer;
 }
 .fl {
   float: left;
+}
+.todo-card /deep/ i {
+  cursor: pointer;
+  line-height: 30px;
+  font-size: 20px;
 }
 </style>

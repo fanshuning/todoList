@@ -24,4 +24,7 @@ body {
 .el-radio__input.is-checked+.el-radio__label {
   color: #fff;
 }
+.el-dialog {
+  width: 800px;
+}
 </style>

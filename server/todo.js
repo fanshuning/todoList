@@ -7,7 +7,7 @@ const db = mongoose.connection
 db.once('error', () => console.log('Mongo connection error'))
 db.once('open', () => console.log('Mongo connection successed'))
 
-/************** 定义模式todoList **************/
+/************** 定义todoList Schema **************/
 let TodoSchema = mongoose.Schema
 const todoSchema = new TodoSchema({
   todo: String,
