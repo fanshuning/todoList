@@ -187,8 +187,12 @@ export default {
   .label {
     margin: 0 10px;
   }
+  span {
+    flex-shrink: 0;
+  }
   .input {
     width: 300px;
+    min-width: 150px;
   }
   .text-btn {
     line-height: 30px;
